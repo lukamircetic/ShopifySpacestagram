@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Box, IconButton, Icon, Image, AspectRatio } from "@chakra-ui/react";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
+import { isBooleanObject } from "util/types";
 interface CardProps {
   url: string;
   title: string;
@@ -8,8 +9,33 @@ interface CardProps {
   type: string;
 }
 
+
+function useLocalStorage(key, initialValue) {
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.log(error);
+      return initialValue;
+    }
+  });
+  const setValue = (value) => {
+    try {
+      const valueToStore =
+        value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  return [storedValue, setValue];
+}
+
 export const Card: React.FC<CardProps> = ({ url, title, date, type }) => {
-  const [like, setLike] = useState(false);
+  const [like, setLike] = useLocalStorage(date, false);
+
   return (
     <Box
       minW={[450, 550, 650]}
@@ -51,7 +77,7 @@ export const Card: React.FC<CardProps> = ({ url, title, date, type }) => {
               color="#E53E3E"
               icon={<Icon as={like ? BsHeartFill : BsHeart} boxSize="2em" />}
               _focus={{ outline: "none" }}
-              _focusVisible={{ outline: "black solid 2px"}}
+              _focusVisible={{ outline: "black solid 2px" }}
             />
           </Box>
         </Box>
