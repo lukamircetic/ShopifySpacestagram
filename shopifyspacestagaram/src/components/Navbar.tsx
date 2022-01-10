@@ -17,7 +17,9 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
       bg="white"
       zIndex="1"
     >
-      <Heading  size="lg" textAlign="center">Spacestagram</Heading>
+      <Heading size="lg" textAlign="center" fontWeight="200">
+        Spacestagram
+      </Heading>
     </Box>
   );
 };

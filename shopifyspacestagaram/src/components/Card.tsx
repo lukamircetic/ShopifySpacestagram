@@ -43,6 +43,7 @@ export const Card: React.FC<CardProps> = ({
             <IconButton
               onClick={() => setLike(!like)}
               aria-label="Like"
+              color="#E53E3E"
               icon={<Icon as={like ? BsHeartFill : BsHeart} boxSize="2em" />}
             />
           </Box>
