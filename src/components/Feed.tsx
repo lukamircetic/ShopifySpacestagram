@@ -64,9 +64,10 @@ export const Feed: React.FC<FeedProps> = ({}) => {
               .map((photo, i) => (
                 <Card
                   key={i}
-                  imageUrl={photo.url}
-                  imageDate={photo.date}
-                  imageTitle={photo.title}
+                  url={photo.url}
+                  date={photo.date}
+                  title={photo.title}
+                  type={photo.media_type}
                 />
               ))
           : null}
