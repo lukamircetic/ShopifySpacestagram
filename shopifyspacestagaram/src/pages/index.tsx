@@ -1,4 +1,13 @@
+import { Box } from "@chakra-ui/react";
 import { Feed } from "../components/Feed";
-const Index = () => <Feed />;
+import { Navbar } from "../components/Navbar";
+const Index = () => {
+  return (
+    <Box display="flex" flexDirection="column" flexGrow="1" bg="#F7FAFC">
+      <Navbar />
+      <Feed />
+    </Box>
+  );
+};
 
 export default Index;

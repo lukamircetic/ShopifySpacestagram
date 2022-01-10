@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { convertDatetoISO, subtractDate } from "../helpers/helpers";
 import { Card } from "./Card";
+import theme from "../theme";
 
 interface FeedProps {}
 
@@ -42,7 +43,14 @@ export const Feed: React.FC<FeedProps> = ({}) => {
   }, []);
   console.log(photos);
   return (
-    <Box w="100%" display="flex" flexDirection="column" alignItems="center">
+    <Box
+      w="100%"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      paddingTop="5em"
+      bg="#F7FAFC"
+    >
       <InfiniteScroll
         dataLength={photos.length}
         next={requestMorePhotos}

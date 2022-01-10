@@ -21,6 +21,7 @@ export const Card: React.FC<CardProps> = ({
       borderRadius="lg"
       overflow="hidden"
       m="15px"
+      bg="white"
     >
       <Image src={imageUrl} alt={imageTitle} />
       <Box p="6">
