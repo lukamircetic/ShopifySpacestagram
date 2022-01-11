@@ -79,8 +79,8 @@ export const Card: React.FC<CardProps> = ({ url, title, date, type }) => {
               transition="all 0.05s cubic-bezier(0.645, 0.045, 0.355, 1)"
               _focus={{ outline: "none" }}
               _focusVisible={{ outline: "black solid 2px" }}
-              _hover={like ? {} : { color: "#718096" }}
-              _active={{ transform: "translateY(-5px)"}}
+              _hover={like ? {} : { color: "#FEB2B2" }}
+              _active={{ transform: "translateY(-5px)" }}
             />
           </Box>
         </Box>

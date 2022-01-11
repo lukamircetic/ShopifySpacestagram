@@ -4,6 +4,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { convertDatetoISO, subtractDate } from "../helpers/helpers";
 import { Card } from "./Card";
 import theme from "../theme";
+import { Loading } from "./Loading";
 
 interface FeedProps {}
 
@@ -55,7 +56,7 @@ export const Feed: React.FC<FeedProps> = ({}) => {
         dataLength={photos.length}
         next={requestMorePhotos}
         hasMore={hasMore}
-        loader={<h3> Loading </h3>}
+        loader={<Loading/>}
         endMessage={<h3> No more photos </h3>}
       >
         {photos.length > 0
