@@ -6,3 +6,6 @@ Some features include:
 - Infinite scroll (more photos are fetched so the feed never ends)
 - Saved likes (when a user likes/unlikes a post and then refreshes/closes the page, the liked posts will be saved)
 - Animated like/ loading animations
+
+Link to the hosted app: https://spacestagramluka.netlify.app/
+
